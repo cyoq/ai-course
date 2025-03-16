@@ -1,0 +1,8 @@
+digraph {
+    rankdir = LR;
+    node [shape = circle;];
+    Hmm -> a_0;
+    Hmm -> big;
+    a_0 -> "a'" -> big [style = "dashed";];
+    big -> sum;
+}

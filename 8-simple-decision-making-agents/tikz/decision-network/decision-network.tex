@@ -1,0 +1,46 @@
+% Convert with command:
+% convert -density 300 pic.pdf -quality 90 pic.png
+\documentclass[crop,tikz,border=0pt]{standalone}
+\usetikzlibrary{arrows.meta, fit, shapes.geometric}
+\begin{document}
+
+\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (site) at (-0.5, 0) [shape=rectangle,draw=black,fill=white] {Airport Site};
+
+    \node (traffic) at (-2, -1) [shape=ellipse,draw=black,fill=white] {Air Traffic};
+    \node (litigation) at (-2, -2) [shape=ellipse,draw=black,fill=white] {Litigation};
+    \node (construction) at (-2, -3) [shape=ellipse,draw=black,fill=white] {Construction};
+    
+    \node (deaths) at (2, -1) [shape=ellipse,draw=black,fill=white] {Deaths};
+    \node (noise) at (2, -2) [shape=ellipse,draw=black,fill=white] {Noise};
+    \node (cost) at (2, -3) [shape=ellipse,draw=black,fill=white] {Cost};
+
+    \node[draw,shape=rectangle,dashed,fit=(deaths) (noise) (cost)] {};
+    \draw[] (3, 1) node[draw=white,below left] {Outcome nodes};
+
+    \node (u) at (4, -2) [shape=diamond,draw=black,fill=white] {$U$};
+\end{scope}
+
+\begin{scope}[>={Stealth[black]},
+            %   every node/.style={fill=white,rectangle,above},
+              every edge/.style={draw=red,thick}]
+    \path [->] (site) edge node {} (deaths);
+    \path [->] (site) edge node {} (noise);
+    \path [->] (site) edge node {} (cost);
+
+    \path [->] (traffic) edge node {} (deaths);
+    \path [->] (traffic) edge node {} (noise);
+
+    \path [->] (litigation) edge node {} (cost);
+
+    \path [->] (construction) edge node {} (cost);
+
+    \path [->] (deaths) edge node {} (u);
+    \path [->] (noise) edge node {} (u);
+    \path [->] (cost) edge node {} (u);
+\end{scope}
+\end{tikzpicture}
+
+
+\end{document}

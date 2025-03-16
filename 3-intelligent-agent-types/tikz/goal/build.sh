@@ -1,0 +1,1 @@
+convert -density 300 goal.pdf -quality 100 goal.png

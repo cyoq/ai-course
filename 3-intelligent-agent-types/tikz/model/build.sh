@@ -1,0 +1,1 @@
+convert -density 300 model.pdf -quality 100 model.png

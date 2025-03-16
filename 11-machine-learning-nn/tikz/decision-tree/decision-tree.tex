@@ -1,0 +1,51 @@
+% Convert with command:
+% convert -density 300 pic.pdf -quality 90 pic.png
+\documentclass[crop,tikz,border=0pt]{standalone}
+\usetikzlibrary{arrows.meta, fit, shapes.geometric}
+\begin{document}
+
+\begin{tikzpicture}
+\begin{scope}[
+    every node/.style={circle,thick,draw},
+    every label/.append style={shape=rectangle,text=red}]
+
+    \node (regular-guests) at (0, 0) [shape=ellipse,draw=black,fill=white,label=above:] {Regular guests};
+    \node (no1) at (-3, -2) [shape=ellipse,draw=black,fill=white,label=above:] {No};
+    \node (yes1) at (-1, -2) [shape=ellipse,draw=black,fill=white,label=above:] {Yes};
+
+    \node (hungry) at (2, -2) [shape=ellipse,draw=black,fill=white,label=above:] {Hungry};
+    \node (no2) at (3, -3.5) [shape=ellipse,draw=black,fill=white,label=east:$x_5;x_9$] {No};
+
+    \node (type) at (1, -4) [shape=ellipse,draw=black,fill=white,label=above:] {Type};
+    \node (no3) at (-1, -5) [shape=ellipse,draw=black,fill=white,label=west:$x_{10}$] {No};
+    \node (yes2) at (0, -6) [shape=ellipse,draw=black,fill=white,label=south west:From hungry: $yes(5);no(2)$] {Yes};
+    \node (yes3) at (5, -6) [shape=ellipse,draw=black,fill=white,label=east:$x_{12}$] {Yes};
+
+    \node (friday) at (2, -7) [shape=ellipse,draw=black,fill=white,text width=4em,label=above:] {Friday-Saturday};
+    \node (no4) at (2, -9) [shape=ellipse,draw=black,fill=white,label=below:$x_2$] {No};
+    \node (yes4) at (4, -9) [shape=ellipse,draw=black,fill=white,label=below:$x_4$] {Yes};
+
+\end{scope}
+
+\begin{scope}[>={Stealth[black]},
+              every node/.style={fill=white,rectangle,above},
+              every edge/.style={draw=red,very thick}]
+    \path [->] (regular-guests) edge node {None} (no1);
+    \path [->] (regular-guests) edge node {Some} (yes1);
+    \path [->] (regular-guests) edge node {Full} (hungry);
+
+    \path [->] (hungry) edge node {Yes} (type);
+    \path [->] (hungry) edge node {No} (no2);
+
+    \path [->] (type) edge node {Italian} (no3);
+    \path [->] (type) edge node {French} (yes2);
+    \path [->] (type) edge node[anchor=west] {Thailand} (friday);
+    \path [->] (type) edge node {Burger} (yes3);
+
+    \path [->] (friday) edge node {No} (no4);
+    \path [->] (friday) edge node {Yes} (yes4);
+
+\end{scope}
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,66 @@
+% Convert with command:
+% convert -density 300 pic.pdf -quality 90 pic.png
+\documentclass[crop,tikz,border=0pt]{standalone}
+\usetikzlibrary{arrows.meta, fit}
+\begin{document}
+
+\begin{tikzpicture}
+\begin{scope}[
+    every node/.style={circle,thick,draw},
+    every label/.append style={shape=rectangle,text=red}]
+    \node (1) at (0, 0) [shape=circle,draw=black,fill=white,label=below:$0.88$] {3, 2};
+
+    \node (2) at (-3, 0) [shape=circle,draw=black,fill=white,label=south east:$0.88$] {3, 3};
+
+    \node (3) at (-2, -2) [shape=circle,draw=black,fill=white,label=below:$-1.08$] {4, 2};
+
+    \node (4) at (2, -2) [shape=circle,draw=black,fill=white,label=east:$-0.12$] {3, 2};
+
+    \node (5) at (3, 1) [shape=circle,draw=black,fill=white,label=south west:$-0.12$] {3, 1};
+
+    % 2nd node
+    \node (6) at (-5, 2) [shape=circle,draw=black,fill=white,label=west:$-0.12$] {3, 3};
+    \node (7) at (-6, 1) [shape=circle,draw=black,fill=white,label=west:$0.88$] {4, 3};
+    \node (8) at (-6, -1) [shape=circle,draw=black,fill=white,label=west:$-0.12$] {2, 3};
+    \node (9) at (-5, -2) [shape=circle,draw=black,fill=white,label=west:$-0.12$] {3, 2};
+
+    % 4th node
+    \node (10) at (0, -4) [shape=circle,draw=black,fill=white,label=below:$-0.12$] {3, 2};
+    \node (11) at (1, -5) [shape=circle,draw=black,fill=white,label=below:$-1.12$] {4, 2};
+    \node (12) at (3, -5) [shape=circle,draw=black,fill=white,label=below:$-0.12$] {3, 2};
+    \node (13) at (4, -4) [shape=circle,draw=black,fill=white,label=below:$-0.12$] {3, 1};
+
+    % 5th node
+    \node (14) at (5, 3) [shape=circle,draw=black,fill=white,label=east:$-0.12$] {3, 1};
+    \node (15) at (6, 2) [shape=circle,draw=black,fill=white,label=east:$-0.12$] {2, 1};
+    \node (16) at (6, 0) [shape=circle,draw=black,fill=white,label=east:$-0.12$] {4, 1};
+    \node (17) at (5, -1) [shape=circle,draw=black,fill=white,label=east:$-0.12$] {3, 2};
+\end{scope}
+
+\begin{scope}[>={Stealth[black]},
+              every node/.style={fill=white,rectangle,above},
+              every edge/.style={draw=red,very thick}]
+    \path [->] (1) edge node {forward} (2);
+    \path [->] (1) edge node {right} (3);
+    \path [->] (1) edge node {left} (4);
+    \path [->] (1) edge node {backward} (5);
+
+    \path [->] (2) edge node {forward} (6);
+    \path [->] (2) edge node {right} (7);
+    \path [->] (2) edge node {left} (8);
+    \path [->] (2) edge node {backward} (9);
+
+    \path [->] (4) edge node {forward} (10);
+    \path [->] (4) edge node {right} (11);
+    \path [->] (4) edge node {left} (12);
+    \path [->] (4) edge node {backward} (13);
+
+    \path [->] (5) edge node {forward} (14);
+    \path [->] (5) edge node {right} (15);
+    \path [->] (5) edge node {left} (16);
+    \path [->] (5) edge node {backward} (17);
+\end{scope}
+\end{tikzpicture}
+
+
+\end{document}

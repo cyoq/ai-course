@@ -1,0 +1,1 @@
+convert -density 300 utility.pdf -quality 100 utility.png

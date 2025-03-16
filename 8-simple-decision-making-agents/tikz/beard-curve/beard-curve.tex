@@ -1,0 +1,21 @@
+% Convert with command:
+% convert -density 300 pic.pdf -quality 90 pic.png
+\documentclass[crop,tikz,border=0pt]{standalone}
+\usetikzlibrary{arrows.meta, fit}
+\begin{document}
+
+\begin{tikzpicture}[domain=-2:2]
+
+    \draw[very thin,color=gray] (-2.5,-2.5) grid (2.5,2.5);
+
+    \draw[->] (-2.2,0) -- (2.2,0) node[right] {$x = \$$};
+    \draw[->] (0,-2.2) -- (0,2.2) node[above] {$U = tanh(x)$};
+
+    \draw[color=red,thick] plot (\x,{tanh(\x)}) node[above left] {};
+
+    \draw (1, 1) node[above right] {1.};
+    \draw (0, 0) node[above left] {2.};
+    \draw (-1, -1) node[below left] {3.};
+\end{tikzpicture}
+
+\end{document}

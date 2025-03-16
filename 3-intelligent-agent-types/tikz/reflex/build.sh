@@ -1,0 +1,1 @@
+convert -density 300 reflex.pdf -quality 100 reflex.png

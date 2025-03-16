@@ -1,0 +1,43 @@
+% Convert with command:
+% convert -density 300 pic.pdf -quality 90 pic.png
+\documentclass[crop,tikz,border=0pt]{standalone}
+\usetikzlibrary{arrows.meta, fit}
+\begin{document}
+
+\begin{tikzpicture}
+    \draw[->] (0,0) -- (4,0) node[right] {$X_1$};
+    \draw[->] (0,0) -- (0,4) node[above] {$X_2$};
+
+    \draw[-,dashed] (1.8,1.3) -- (4,1.3) node[] {};
+    \draw[-,dashed] (1.8,1.3) -- (1.8,4) node[] {};
+
+    \draw[color=black] (2, 1) node[above left] {A};
+
+    \draw[color=black] (3, 2) node[above left] {B};
+
+    \draw[color=black] (1, 3) node[above left] {C};
+
+    \draw[color=black] (3, 0.5) node[above left] {D};
+
+    \draw[] (4.5, 3) node[above left,text width=20mm] {\small This region dominates $A$};
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+    \draw[->] (0,0) -- (4,0) node[right] {$X_1$};
+    \draw[->] (0,0) -- (0,4) node[above] {$X_2$};
+
+    \draw[-,dashed] (1,1.6) -- (4,1.6) node[] {};
+
+    \draw[-,dashed] (2.1,0.5) -- (2.1,4) node[] {};
+
+    \draw[color=black] (2, 1) node[shape=circle,draw=black,above left] {A};
+
+    \draw[color=black] (3, 3) node[shape=circle,draw=black,above left] {B};
+
+    \draw[color=black] (4, 1.5) node[shape=circle,draw=black,above left] {C};
+
+\end{tikzpicture}
+
+
+\end{document}

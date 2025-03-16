@@ -1,0 +1,1 @@
+convert -density 300 pic.pdf -quality 100 pic.png

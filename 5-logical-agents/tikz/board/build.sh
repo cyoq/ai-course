@@ -1,0 +1,1 @@
+convert -density 300 board.pdf -quality 100 board.png

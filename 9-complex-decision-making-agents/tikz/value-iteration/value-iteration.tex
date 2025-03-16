@@ -1,0 +1,118 @@
+% Convert with command:
+% convert -density 300 pic.pdf -quality 100 pic.png
+\documentclass[crop,tikz,border=0pt]{standalone}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc}
+\usetikzlibrary{snakes}
+\usetikzlibrary{shapes.geometric}
+\begin{document}
+\begin{tikzpicture}
+\input{../board-commands.tex}
+
+\customgrid{3}{4}
+
+\gridtext{4, 2}{-1}
+
+\gridtext{4, 3}{1}
+
+\squarecolor{2, 2}{gray}
+
+\gridtext{1, 1}{0}
+\gridtext{1, 2}{0}
+\gridtext{1, 3}{0}
+
+\gridtext{2, 1}{0}
+\gridtext{2, 3}{0}
+
+\gridtext{3, 1}{0}
+\gridtext{3, 2}{0}
+\gridtext{3, 3}{0}
+
+\gridtext{4, 1}{0}
+
+% \foreach \x in {1,...,4} 
+%     \foreach \y in {1,..., 3} {
+%         \gridtext{\x, \y}{0};
+%     }
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\input{../board-commands.tex}
+
+\customgrid{3}{4}
+
+\gridtext{4, 2}{-1}
+
+\gridtext{4, 3}{1}
+
+\squarecolor{2, 2}{gray}
+
+\gridtext{1, 1}{-0.04}
+\gridtext{1, 2}{-0.04}
+\gridtext{1, 3}{-0.04}
+
+\gridtext{2, 1}{-0.04}
+\gridtext{2, 3}{-0.04}
+
+\gridtext{3, 1}{-0.04}
+\gridtext{3, 2}{-0.04}
+\gridtext{3, 3}{0.76}
+
+\gridtext{4, 1}{-0.04}
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\input{../board-commands.tex}
+
+\customgrid{3}{4}
+
+\gridtext{4, 2}{-1}
+
+\gridtext{4, 3}{1}
+
+\squarecolor{2, 2}{gray}
+
+\gridtext{1, 1}{-0.08}
+\gridtext{1, 2}{-0.08}
+\gridtext{1, 3}{-0.08}
+
+\gridtext{2, 1}{-0.08}
+\gridtext{2, 3}{0.56}
+
+\gridtext{3, 1}{-0.08}
+\gridtext{3, 2}{0.464}
+\gridtext{3, 3}{0.76}
+
+\gridtext{4, 1}{-0.08}
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\input{../board-commands.tex}
+
+\customgrid{3}{4}
+
+\gridtext{4, 2}{-1}
+
+\gridtext{4, 3}{1}
+
+\squarecolor{2, 2}{gray}
+
+\gridtext{1, 1}{0.705}
+\gridtext{1, 2}{0.762}
+\gridtext{1, 3}{0.812}
+
+\gridtext{2, 1}{0.655}
+\gridtext{2, 3}{0.868}
+
+\gridtext{3, 1}{0.611}
+\gridtext{3, 2}{0.660}
+\gridtext{3, 3}{0.918}
+
+\gridtext{4, 1}{0.387}
+
+\end{tikzpicture}
+
+\end{document}

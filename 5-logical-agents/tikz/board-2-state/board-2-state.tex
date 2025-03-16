@@ -1,0 +1,27 @@
+% Convert with command:
+% convert -density 300 pic.pdf -quality 100 pic.png
+\documentclass[crop,tikz,border=0pt]{standalone}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc}
+\usetikzlibrary{snakes}
+\begin{document}
+\begin{tikzpicture}
+
+\input{../board-commands.tex}
+
+\grid{4}
+
+\human{2, 1}
+
+\ok{1, 2}
+\ok{2, 1}
+
+\pithole{3, 1}{P?}
+\pithole{2, 2}{P?}
+
+\begin{scope}[shift={(0, 0.4)}]
+  \breeze{2, 1}
+\end{scope}
+
+\end{tikzpicture}
+\end{document}

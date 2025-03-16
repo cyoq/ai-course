@@ -1,0 +1,20 @@
+% Convert with command:
+% convert -density 300 pic.pdf -quality 100 pic.png
+\documentclass[crop,tikz,border=0pt]{standalone}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc}
+\usetikzlibrary{snakes}
+\begin{document}
+\begin{tikzpicture}
+
+\input{../board-commands.tex}
+
+\grid{4}
+
+\human{1, 1}
+
+\ok{1, 2}
+\ok{2, 1}
+
+\end{tikzpicture}
+\end{document}

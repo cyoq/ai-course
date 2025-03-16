@@ -1,0 +1,102 @@
+% Convert with command:
+% convert -density 300 pic.pdf -quality 100 pic.png
+\documentclass[crop,tikz,border=0pt]{standalone}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc}
+\usetikzlibrary{snakes}
+\begin{document}
+\begin{tikzpicture}
+
+\input{../board-commands.tex}
+
+\node at (-0.5, 1) [
+  shape=circle, fill=white, text centered, text=black, font=\bfseries
+] {A)};
+\begin{scope}
+  \customgrid{2}{3}
+  \breeze{2, 1}
+  \pithole{3, 1}{P}
+\end{scope}
+
+\node at (-0.5, -2) [
+  shape=circle, fill=white, text centered, text=black, font=\bfseries
+] {B)};
+\begin{scope}[shift={(0, -3)}]
+  \customgrid{2}{3}
+  \breeze{2, 1}
+  \pithole{2, 2}{P}
+\end{scope}
+
+\node at (-0.5, -5) [
+  shape=circle, fill=white, text centered, text=black, font=\bfseries
+] {C)};
+\begin{scope}[shift={(0, -6)}]
+  \customgrid{2}{3}
+  \breeze{2, 1}
+  \pithole{2, 2}{P}
+  \pithole{3, 1}{P}
+\end{scope}
+
+\node at (3.5, 1) [
+  shape=circle, fill=white, text centered, text=black, font=\bfseries
+] {D)};
+\begin{scope}[shift={(4, 0)}]
+  \customgrid{2}{3}
+  \breeze{2, 1}
+  \pithole{1, 2}{P}
+\end{scope}
+
+\node at (3.5, -2) [
+  shape=circle, fill=white, text centered, text=black, font=\bfseries
+] {E)};
+\begin{scope}[shift={(4, -3)}]
+  \customgrid{2}{3}
+  \breeze{2, 1}
+\end{scope}
+
+\node at (3.5, -5) [
+  shape=circle, fill=white, text centered, text=black, font=\bfseries
+] {F)};
+\begin{scope}[shift={(4, -6)}]
+  \customgrid{2}{3}
+  \breeze{2, 1}
+  \pithole{3, 1}{P}
+  \pithole{2, 2}{P}
+  \pithole{1, 2}{P}
+\end{scope}
+
+\node at (7.5, 1) [
+  shape=circle, fill=white, text centered, text=black, font=\bfseries
+] {G)};
+\begin{scope}[shift={(4, -6)}]
+  \customgrid{2}{3}
+  \breeze{2, 1}
+  \pithole{3, 1}{P}
+  \pithole{2, 2}{P}
+  \pithole{1, 2}{P}
+\end{scope}
+
+\node at (7.5, -2) [
+  shape=circle, fill=white, text centered, text=black, font=\bfseries
+] {H)};
+\begin{scope}[shift={(8, 0)}]
+  \customgrid{2}{3}
+  \breeze{2, 1}
+  \pithole{3, 1}{P}
+  \pithole{1, 2}{P}
+\end{scope}
+
+\begin{scope}[shift={(8, -3)}]
+  \customgrid{2}{3}
+  \breeze{2, 1}
+  \pithole{1, 2}{P}
+  \pithole{2, 2}{P}
+\end{scope}
+
+\draw[very thick, draw=black, dotted] (-1, -6.5) rectangle ++(4.5,8.5);
+\node (M) at (-0.5, -0.5) [
+  shape=circle, draw=black, fill=white, text centered, text=black, font=\bfseries
+] {KB};
+
+\end{tikzpicture}
+\end{document}

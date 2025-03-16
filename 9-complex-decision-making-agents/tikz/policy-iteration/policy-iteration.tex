@@ -1,0 +1,53 @@
+% Convert with command:
+% convert -density 300 pic.pdf -quality 100 pic.png
+\documentclass[crop,tikz,border=0pt]{standalone}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc}
+\usetikzlibrary{snakes}
+\usetikzlibrary{shapes.geometric}
+\begin{document}
+
+\begin{tikzpicture}
+\input{../board-commands.tex}
+
+\customgrid{3}{4}
+
+\gridtext{4, 2}{-1}
+
+\gridtext{4, 3}{1}
+
+\squarecolor{2, 2}{gray}
+
+\arrow[180]{2, 3}
+
+\arrow[180]{3, 1}
+\arrow[180]{3, 2}
+\arrow[90]{3, 3}
+
+\arrow[270]{4, 1}
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\input{../board-commands.tex}
+
+\customgrid{3}{4}
+
+\gridtext{4, 2}{-1}
+
+\gridtext{4, 3}{1}
+
+\squarecolor{2, 2}{gray}
+
+
+\gridtext{2, 3}{-0.04}
+
+\gridtext{3, 1}{-0.04}
+\gridtext{3, 2}{-0.04}
+\gridtext{3, 3}{0.06}
+
+\gridtext{4, 1}{-0.04}
+
+\end{tikzpicture}
+
+\end{document}

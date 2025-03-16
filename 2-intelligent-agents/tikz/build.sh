@@ -1,0 +1,1 @@
+convert -density 300 agent.pdf -quality 100 agent.png

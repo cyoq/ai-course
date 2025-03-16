@@ -1,0 +1,48 @@
+% Convert with command:
+% convert -density 300 pic.pdf -quality 90 pic.png
+\documentclass[crop,tikz,border=0pt]{standalone}
+\usetikzlibrary{arrows.meta}
+\begin{document}
+\begin{tikzpicture}
+
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (A) at (0,0) [fill=white] {$p_1$};
+    \node (B) at (1,0) [fill=white] {$p_2$};
+    \node (C) at (2,0) [fill=white] {$p_3$};
+    \node (D) at (3,0) [fill=white] {$p_4$};
+
+    \node (Box) at (1.5, -1) [shape=rectangle,draw,fill=black,text width=3.5cm,text height=0.3cm] {};
+
+    \node (E) at (0,-2) [fill=white] {$a_1$};
+    \node (F) at (1,-2) [fill=white] {$a_2$};
+    \node (G) at (2,-2) [fill=white] {$a_3$};
+    \node (H) at (3,-2) [fill=white] {$a_4$};
+\end{scope}
+
+\begin{scope}[>={Stealth[black]},
+              % every node/.style={fill=white,circle},
+              every node/.style={},
+              every edge/.style={draw=red,very thick}]
+    \path [->] (A) edge node {} (0, -0.75);
+    \path [->] (B) edge node {} (1, -0.75);
+    \path [->] (C) edge node {} (2, -0.75);
+    \path [->] (D) edge node {} (3, -0.75);
+
+    \path [->] (0, -1.3) edge node {} (E);
+    \path [->] (1, -1.3) edge node {} (F);
+    \path [->] (2, -1.3) edge node {} (G);
+    \path [->] (3, -1.3) edge node {} (H);
+\end{scope}
+
+% \draw (-1,0) node [] {Text at \verb!node A!};
+
+\draw (-1,0) node [] {$P$:};
+
+\draw (-1.5,-1) node [] {$f: P \rightarrow A$};
+
+\draw (-1,-2) node [] {$A$:};
+
+\draw (1.5,-1) node [text=white] {Agent};
+
+\end{tikzpicture}
+\end{document}

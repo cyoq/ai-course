@@ -1,0 +1,16 @@
+practice
+exam-prepare
+/*.pdf
+1-first-steps/01*.pdf
+2-intelligent-agents/02*.pdf
+3-intelligent-agent-types/03*.pdf
+4-environments/04*.pdf
+5-logical-agents/05*.pdf
+7-uncertain-knowledge/06*.pdf
+8-simple-decision-making-agents/07*.pdf
+9-complex-decision-making-agents/08*.pdf
+10-machine-learning/09*.pdf
+11-machine-learning-nn/10*.pdf
+11-machine-learning-nn/11*.pdf
+*.synctex.gz
+.DS_Store

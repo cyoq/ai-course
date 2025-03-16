@@ -1,0 +1,1 @@
+convert -density 300 learning.pdf -quality 100 learning.png
